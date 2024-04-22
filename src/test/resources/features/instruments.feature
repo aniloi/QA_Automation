@@ -2,8 +2,8 @@ Feature: Verify Instruments API
 
   Scenario: List Instruments
     Given I am logged in with a valid user account
-#    When I GET a list of all the available Instruments offered on the DriveWealth platform
-#    Then Verify API response
+    When I GET a list of all the available Instruments offered on the DriveWealth platform
+    Then Verify API response
 
   Scenario: Retrieve Instrument
     Given I am logged in with a valid user account
