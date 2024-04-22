@@ -30,15 +30,23 @@ public class AuthenticationSteps {
 
     @Given("I log in with the following credentials")
     public void i_log_in_with_the_following_credentials(Map<String,String> table) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
 
-//        requestBody.put("dwClientAppKey", table.get("dwClientAppKey"));
+        RestAssured.baseURI = "https://bo-api.drivewealth.xyz/back-office/";
+        RestAssured.basePath = "auth/";
+
+        requestBody.put("username", table.get("username"));
+        requestBody.put("password", table.get("password"));
+        requestBody.put("appTypeID", table.get("appTypeID"));
+
+        response = RestAssured.given()
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .header("dw-client-app-key", table.get("dwClientAppKey"))
+                .body(requestBody)
+                .post(RestAssured.baseURI + RestAssured.basePath);
+
+        assertEquals(response.statusCode(), 200);
+
 
     }
     @Then("the scenario passes")
@@ -54,7 +62,7 @@ public class AuthenticationSteps {
 
         requestBody.put("username", "bo.kruger.apiauto.jenkinsnewmantests");
         requestBody.put("password", "passw0rd");
-        requestBody.put("appTypeID", "4");
+        requestBody.put("appTypeID", 4);
 
         response = RestAssured.given()
                 .contentType(ContentType.JSON)
