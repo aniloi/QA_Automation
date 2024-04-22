@@ -50,7 +50,7 @@ public class AuthenticationSteps {
     public void i_am_logged_in_with_a_valid_user_account() {
         // Write code here that turns the phrase above into concrete actions
         RestAssured.baseURI = "https://bo-api.drivewealth.xyz/back-office/";
-        RestAssured.basePath = "back-office/auth/";
+        RestAssured.basePath = "auth/";
 
         requestBody.put("username", "bo.kruger.apiauto.jenkinsnewmantests");
         requestBody.put("password", "passw0rd");
@@ -63,14 +63,7 @@ public class AuthenticationSteps {
                 .body(requestBody)
                 .post(RestAssured.baseURI + RestAssured.basePath);
 
-//        body = response.getBody();
-//        String sResponseBody = body.asString();
-//        System.out.println(sResponseBody);
-//
-//        JsonPath jsonPath = response.jsonPath();
-//        accessToken = jsonPath.getJsonObject("authToken").toString();
-//
-//        assertEquals(response.statusCode(), 200);
+        assertEquals(response.statusCode(), 200);
 
         System.out.println("Response Status Code: " + response.getStatusCode());
         System.out.println("Response Body: " + response.getBody().asString());
