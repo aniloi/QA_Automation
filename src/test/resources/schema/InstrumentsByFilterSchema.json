@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/Welcome5Element"
+  },
+  "definitions": {
+    "Welcome5Element": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": "string"
+        },
+        "instrumentType": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "payFrequency": {
+          "type": "string"
+        },
+        "couponRate": {
+          "type": "number"
+        },
+        "maturityDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "spRating": {
+          "type": "string"
+        },
+        "bondType": {
+          "type": "string"
+        },
+        "domicileCountry": {
+          "type": "string"
+        },
+        "ISIN": {
+          "type": "string"
+        },
+        "CUSIP": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "CUSIP",
+        "ISIN",
+        "bondType",
+        "couponRate",
+        "domicileCountry",
+        "id",
+        "instrumentType",
+        "maturityDate",
+        "name",
+        "payFrequency",
+        "spRating",
+        "status"
+      ],
+      "title": "Welcome5Element"
+    }
+  }
+}

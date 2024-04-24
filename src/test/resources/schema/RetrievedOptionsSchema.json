@@ -1,0 +1,111 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome9",
+    "definitions": {
+        "Welcome9": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "symbol": {
+                    "type": "string"
+                },
+                "options": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Option"
+                    }
+                }
+            },
+            "required": [
+                "options",
+                "symbol"
+            ],
+            "title": "Welcome9"
+        },
+        "Option": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "optionsData": {
+                    "$ref": "#/definitions/OptionsData"
+                },
+                "id": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "symbol": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "exchange": {
+                    "type": "string"
+                },
+                "orderSizeMax": {
+                    "type": "integer"
+                },
+                "orderSizeMin": {
+                    "type": "integer"
+                },
+                "orderSizeStep": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "exchange",
+                "id",
+                "name",
+                "optionsData",
+                "orderSizeMax",
+                "orderSizeMin",
+                "orderSizeStep",
+                "symbol",
+                "type"
+            ],
+            "title": "Option"
+        },
+        "OptionsData": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "rootSymbol": {
+                    "type": "string"
+                },
+                "rootId": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "expirationDate": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "optionType": {
+                    "type": "string"
+                },
+                "strikePrice": {
+                    "type": "number"
+                },
+                "deliverable": {
+                    "type": "integer"
+                },
+                "multiplier": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "deliverable",
+                "expirationDate",
+                "multiplier",
+                "optionType",
+                "rootId",
+                "rootSymbol",
+                "strikePrice"
+            ],
+            "title": "OptionsData"
+        }
+    }
+}

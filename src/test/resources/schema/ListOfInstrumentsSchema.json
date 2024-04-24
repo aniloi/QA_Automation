@@ -1,0 +1,202 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/Welcome2Element"
+  },
+  "definitions": {
+    "Welcome2Element": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "enableExtendedHoursNotionalStatus": {
+          "type": "string"
+        },
+        "instrumentType": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "ISIN": {
+          "type": "string"
+        },
+        "isOptionsEnabled": {
+          "type": "boolean"
+        },
+        "CUSIP": {
+          "type": "string"
+        },
+        "payFrequency": {
+          "type": "string"
+        },
+        "couponRate": {
+          "type": "number"
+        },
+        "maturityDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "spRating": {
+          "type": "string"
+        },
+        "bondType": {
+          "type": "string"
+        },
+        "domicileCountry": {
+          "type": "string"
+        },
+        "orderSizeMax": {
+          "type": "integer"
+        },
+        "orderSizeMin": {
+          "type": "number"
+        },
+        "orderSizeStep": {
+          "type": "number"
+        },
+        "exchange": {
+          "type": "string"
+        },
+        "settlementDays": {
+          "type": "integer"
+        },
+        "minimumInvestmentAmount": {
+          "type": "integer"
+        },
+        "incrementalInvestmentAmount": {
+          "type": "integer"
+        },
+        "issueDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "datedDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "issueAmount": {
+          "type": "integer"
+        },
+        "issuePrice": {
+          "type": "integer"
+        },
+        "accruedInterest": {
+          "type": "number"
+        },
+        "debtType": {
+          "type": "string"
+        },
+        "coupon": {
+          "$ref": "#/definitions/Coupon"
+        },
+        "issuer": {
+          "$ref": "#/definitions/Issuer"
+        }
+      },
+      "required": [
+        "ISIN",
+        "bondType",
+        "couponRate",
+        "id",
+        "instrumentType",
+        "maturityDate",
+        "name",
+        "payFrequency",
+        "spRating",
+        "status",
+        "symbol"
+      ],
+      "title": "Welcome2Element"
+    },
+    "Coupon": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "couponType": {
+          "type": "string"
+        },
+        "currentRateDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "dayCount": {
+          "type": "string"
+        },
+        "benchmark": {
+          "type": "string"
+        },
+        "benchmarkFormula": {
+          "type": "string"
+        },
+        "nextResetDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "minimumRate": {
+          "type": "number"
+        },
+        "maximumRate": {
+          "type": "number"
+        },
+        "firstCouponDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "nextCouponDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "finalCouponDate": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "benchmark",
+        "benchmarkFormula",
+        "couponType",
+        "currentRateDate",
+        "dayCount",
+        "finalCouponDate",
+        "firstCouponDate",
+        "maximumRate",
+        "minimumRate",
+        "nextCouponDate",
+        "nextResetDate"
+      ],
+      "title": "Coupon"
+    },
+    "Issuer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "primaryName": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "domicileCountry": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "country",
+        "domicileCountry",
+        "primaryName"
+      ],
+      "title": "Issuer"
+    }
+  }
+}

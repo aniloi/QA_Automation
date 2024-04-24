@@ -1,0 +1,321 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome5",
+  "definitions": {
+    "Welcome5": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "orderSizeMax": {
+          "type": "integer"
+        },
+        "orderSizeMin": {
+          "type": "number"
+        },
+        "orderSizeStep": {
+          "type": "number"
+        },
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "instrumentType": {
+          "type": "string"
+        },
+        "exchange": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "ISIN": {
+          "type": "string"
+        },
+        "settlementDays": {
+          "type": "integer"
+        },
+        "reutersPrimaryRic": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "marketTier": {
+          "type": "string"
+        },
+        "sector": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "trbc2012": {
+          "type": "string"
+        },
+        "indexMemberships": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "incorporatedCountry": {
+          "type": "string"
+        },
+        "isOptionsEnabled": {
+          "type": "boolean"
+        },
+        "longOnly": {
+          "type": "boolean"
+        },
+        "exchangeNickelSpread": {
+          "type": "boolean"
+        },
+        "close": {
+          "type": "number"
+        },
+        "enableExtendedHoursNotionalStatus": {
+          "type": "string"
+        },
+        "fundamentalDataModel": {
+          "$ref": "#/definitions/FundamentalDataModel"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "http"
+          ]
+        },
+        "closePrior": {
+          "type": "number"
+        },
+        "image": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "http"
+          ],
+          "qt-uri-extensions": [
+            ".png"
+          ]
+        },
+        "isPTP": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "ISIN",
+        "close",
+        "closePrior",
+        "description",
+        "enableExtendedHoursNotionalStatus",
+        "exchange",
+        "exchangeNickelSpread",
+        "fundamentalDataModel",
+        "id",
+        "image",
+        "incorporatedCountry",
+        "indexMemberships",
+        "industry",
+        "instrumentType",
+        "isOptionsEnabled",
+        "isPTP",
+        "longOnly",
+        "marketTier",
+        "name",
+        "orderSizeMax",
+        "orderSizeMin",
+        "orderSizeStep",
+        "reutersPrimaryRic",
+        "sector",
+        "settlementDays",
+        "status",
+        "symbol",
+        "trbc2012",
+        "url"
+      ],
+      "title": "Welcome5"
+    },
+    "FundamentalDataModel": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "symbol": {
+          "type": "string"
+        },
+        "openPrice": {
+          "type": "number"
+        },
+        "bidPrice": {
+          "type": "number"
+        },
+        "askPrice": {
+          "type": "number"
+        },
+        "lowPrice": {
+          "type": "number"
+        },
+        "highPrice": {
+          "type": "number"
+        },
+        "fiftyTwoWeekLowPrice": {
+          "type": "number"
+        },
+        "fiftyTwoWeekHighPrice": {
+          "type": "number"
+        },
+        "cumulativeVolume": {
+          "type": "integer"
+        },
+        "marketCap": {
+          "type": "integer"
+        },
+        "peRatio": {
+          "type": "number"
+        },
+        "dividendYield": {
+          "type": "number"
+        },
+        "earningsPerShare": {
+          "type": "number"
+        },
+        "dividend": {
+          "type": "number"
+        },
+        "sharesOutstanding": {
+          "type": "integer"
+        },
+        "timeLastUpdate": {
+          "type": "string",
+          "format": "time"
+        },
+        "bookValuePerShare": {
+          "type": "string"
+        },
+        "cashFlowPerShare": {
+          "type": "string"
+        },
+        "operatingIncome": {
+          "type": "string"
+        },
+        "pbRatio": {
+          "type": "string"
+        },
+        "volumeMovingAverage10Day": {
+          "type": "integer"
+        },
+        "volumeMovingAverage25Day": {
+          "type": "integer"
+        },
+        "volumeMovingAverage50Day": {
+          "type": "integer"
+        },
+        "priceMovingAverage50Day": {
+          "type": "number"
+        },
+        "priceMovingAverage150Day": {
+          "type": "number"
+        },
+        "priceMovingAverage200Day": {
+          "type": "number"
+        },
+        "roe": {
+          "type": "string"
+        },
+        "percentchangeWTD": {
+          "type": "number"
+        },
+        "percentchangeMTD": {
+          "type": "number"
+        },
+        "percentchangeYTD": {
+          "type": "number"
+        },
+        "percentchange4week": {
+          "type": "number"
+        },
+        "percentchange13week": {
+          "type": "number"
+        },
+        "percentchange26week": {
+          "type": "number"
+        },
+        "percentchange52week": {
+          "type": "number"
+        },
+        "percentchange5day": {
+          "type": "number"
+        },
+        "percentchangeYTDrelsnp": {
+          "type": "number"
+        },
+        "percentchange5weekrelsnp": {
+          "type": "number"
+        },
+        "percentchange13weekrelsnp": {
+          "type": "number"
+        },
+        "percentchange26weekrelsnp": {
+          "type": "number"
+        },
+        "percentchange52weekrelsnp": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "askPrice",
+        "bidPrice",
+        "bookValuePerShare",
+        "cashFlowPerShare",
+        "cumulativeVolume",
+        "dividend",
+        "dividendYield",
+        "earningsPerShare",
+        "fiftyTwoWeekHighPrice",
+        "fiftyTwoWeekLowPrice",
+        "highPrice",
+        "id",
+        "lowPrice",
+        "marketCap",
+        "openPrice",
+        "operatingIncome",
+        "pbRatio",
+        "peRatio",
+        "percentchange13week",
+        "percentchange13weekrelsnp",
+        "percentchange26week",
+        "percentchange26weekrelsnp",
+        "percentchange4week",
+        "percentchange52week",
+        "percentchange52weekrelsnp",
+        "percentchange5day",
+        "percentchange5weekrelsnp",
+        "percentchangeMTD",
+        "percentchangeWTD",
+        "percentchangeYTD",
+        "percentchangeYTDrelsnp",
+        "priceMovingAverage150Day",
+        "priceMovingAverage200Day",
+        "priceMovingAverage50Day",
+        "roe",
+        "sharesOutstanding",
+        "symbol",
+        "timeLastUpdate",
+        "volumeMovingAverage10Day",
+        "volumeMovingAverage25Day",
+        "volumeMovingAverage50Day"
+      ],
+      "title": "FundamentalDataModel"
+    }
+  }
+}
